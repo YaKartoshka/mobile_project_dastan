@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/employers.css">
+    <script src="https://kit.fontawesome.com/afca038480.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="headerContent">
+            <a href="/startpage" class="previous"><</a>
+            <p class="header_text">Выбор специалиста</p>
+        </div>
+    </header>
+    <main class="main">
+        <div class="search">
+
+            <input class="input_search" type="text" placeholder="Поиск">
+        </div>
+        <form action="/infopage" method="post">
+        <div class="employers">
+          
+            <div class="emp_item" id="3">
+                <div class="item_left">
+                    <img class="avatar" src="/public/img/user.svg" alt="">
+                    <div class="info">
+                        <p class="name" >Даниил</p>
+                        <p class="wtd">Стрижка</p>
+                    </div>
+                </div>
+                <a href="/infopage"><i class="fa-solid fa-circle-info"></i></a>
+            </div>
+            <div class="emp_item" id="3">
+                <div class="item_left">
+                    <img class="avatar" src="/public/img/user.svg" alt="">
+                    <div class="info">
+                        <p class="name" >Дастан</p>
+                        <p class="wtd">Окрашивание</p>
+                    </div>
+                </div>
+                <a href="/infopage"><i class="fa-solid fa-circle-info"></i></a>
+            </div>
+            <div class="emp_item" id="3">
+                <div class="item_left">
+                    <img class="avatar" src="/public/img/user.svg" alt="">
+                    <div class="info">
+                        <p class="name" >Ерасыл</p>
+                        <p class="wtd">Маникюр</p>
+                    </div>
+                </div>
+                <a href="/infopage"><i class="fa-solid fa-circle-info"></i></a>
+            </div>
+            <div class="emp_item" id="3">
+                <div class="item_left">
+                    <img class="avatar" src="/public/img/user.svg" alt="">
+                    <div class="info">
+                        <p class="name" >Жансая</p>
+                        <p class="wtd">Выщипывание</p>
+                    </div>
+                </div>
+                <a href="/infopage"><i class="fa-solid fa-circle-info"></i></a>
+            </div>
+            
+        <button type="submit" class="btn_next">Продолжить</button>
+        
+        </div>
+    </form>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="/public/js/fdb_config.js" id="MainScript"></script>
+    <script src="/public/js/employers.js"></script>
+</body>
+
+</html>

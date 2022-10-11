@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmployeInfo</title>
+    <link rel="stylesheet" href="/public/css/infopage.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <header>
+        <div class="headerContent">
+            <a href="/employers" class="previous"><</a>
+            <p class="header_text">Подтвердите запись</p>
+        </div>
+    </header>
+    <main>
+        <div class="profile">
+            <img src="/public/img/user.svg" alt="" class="profile_pic">
+            <p class="name"></p>
+            <p class="action">Барбер</p>
+            <p class="hz">Голова + борода</p>
+        </div>
+        <div class="examples">
+            <p class="ex_title">Примеры работ</p>
+            <img src="./img/user.svg" alt="" class="example_pic">
+            <img src="./img/user.svg" alt="" class="example_pic">
+        </div>
+        <div class="wtd">
+            <p class="wtd_title">Услуги</p>
+            <div class="wtd_item" id="3">
+                <p class="title">Стрижка налысо</p>
+                <p class="price">2000тг, 30 минут</p>
+            </div>
+            <div class="wtd_item" id="3">
+                <p class="title">Полубокс</p>
+                <p class="price">2000тг, 30 минут</p>
+            </div>
+            <div class="wtd_item" id="3">
+                <p class="title">Undercut</p>
+                <p class="price">2000тг, 30 минут</p>
+            </div>
+            <div class="wtd_item" id="3">
+                <p class="title">Стрижка бороды</p>
+                <p class="price">2000тг, 30 минут</p>
+            </div>
+            <div class="wtd_item" id="3">
+                <p class="title">Классика</p>
+                <p class="price">2000тг, 30 минут</p>
+            </div>
+
+        </div>
+        <a href="/appointment" type="button" class="btn_next">
+            Продолжить
+        </a>
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="/public/js/fdb_config.js" id="MainScript"></script>
+    <script src="/public/js/infoPage.js"></script>
+</body>
+</html>

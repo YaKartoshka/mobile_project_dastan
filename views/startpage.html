@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startpage</title>
+    <link rel="stylesheet" href="/public/css/startpage.css">
+</head>
+
+<body>
+    <header class="header">
+        <p class="header_text">Выберите с чего начать</p>
+    </header>
+    <div class="main">
+        <a href="/employers"><div class="specialist">
+            <p class="specialist_text">Специалисты</p>
+        </div></a>
+        <a href="/services"><div class="specialist">
+            <p class="specialist_text">Услуги</p>
+        </div></a>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="/public/js/fdb_config.js" id="MainScript"></script>
+</body>
+
+</html>

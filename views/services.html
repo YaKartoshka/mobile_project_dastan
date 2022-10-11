@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/services.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="headerContent">
+            <a href="/startpage" class="previous"><</a>
+            <p class="header_text">Выбор услуг</p>
+        </div>
+    </header>
+    <div class="search">
+        <input type="text" class="input_text" placeholder="Поиск">
+    </div>
+    <p class="chosen">Выбрано: </p>
+        <div class="dropdown">
+            <div class="service_item">
+                <span>Брови</span>
+                <div class="caret"></div>
+            </div>
+            <ul class="itemMenu">
+                <a href="/employers"><li>Коррекция</li></a>
+                <a href="/employers"><li>Ламинирование</li></a>
+                <a href="/employers"><li>Окрашивание</li></a>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <div class="service_item">
+                <span>Стрижка</span>
+                <div class="caret"></div>
+            </div>
+            <ul class="itemMenu">
+                <a href="/employers"><li>Коррекция</li></a>
+                <a href="/employers"><li>Ламинирование</li></a>
+                <a href="/employers"><li>Окрашивание</li></a>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <div class="service_item">
+                <span>Окрашивание</span>
+                <div class="caret"></div>
+            </div>
+            <ul class="itemMenu">
+                <a href="/employers"><li>Коррекция</li></a>
+                <a href="/employers"><li>Ламинирование</li></a>
+                <a href="/employers"><li>Окрашивание</li></a>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <div class="service_item">
+                <span>Депиляция</span>
+                <div class="caret"></div>
+            </div>
+            <ul class="itemMenu">
+                <a href="/employers"><li>Коррекция</li></a>
+                <a href="/employers"><li>Ламинирование</li></a>
+                <a href="/employers"><li>Окрашивание</li></a>
+            </ul>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+        <script src="/public/js/fdb_config.js" id="MainScript"></script>
+        <script src="/public/js/services.js"></script>
+</body>
+
+</html>

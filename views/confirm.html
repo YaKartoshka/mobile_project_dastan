@@ -1,0 +1,49 @@
+8<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+    <link rel="stylesheet" href="/public/css/confirm.css">
+</head>
+<body>
+    <header class="header">
+        <div class="headerContent">
+            <a href="/appointment" class="previous"><</a>
+            <p class="header_text">Подтвердите запись</p>
+        </div>
+    </header>
+    <form action="/confirmed" method="post">
+    <div class="ConfirmContainer">
+        <div class="ClientData">
+            <div class="Name">
+                <input type="text" name="user_name" placeholder="Ваше имя">
+            </div>
+            <div class="Surname">
+                <input type="text" name="surname" placeholder="Ваша фамилия">
+            </div>
+            <div class="Number">
+                <input type="text" name="number" value="+7">
+            </div>
+        </div>
+        <div class="Comment">
+            <textarea  name="comment" cols="30" rows="5" placeholder="Введите комментарий"></textarea>
+        </div>
+        <div class="DataConfirm">
+            <input type="checkbox">
+            <p>Согласние на обработку персональных данных.</p>
+        </div>
+        <div class="about">
+            <a href="#">Подробнее*</a>
+        </div>
+        <div class="ConfirmBtn">
+            <button type="submit">Продолжить</button>
+        </div>
+    </div>
+    </form>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="/public/js/fdb_config.js" id="MainScript"></script>
+</body>
+</html>

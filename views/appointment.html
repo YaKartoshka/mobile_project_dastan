@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"  ="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/appointment.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="headerContent">
+            <a href="/employers" class="previous"></a>
+            <p class="header_text">Дата и время</p>
+        </div>
+    </header>
+    <div class="calendar"></div>
+    <div class="time">
+        <div class="timeSquare">11:00</div>
+        <div class="timeSquare">12:00</div>
+        <div class="timeSquare">13:00</div>
+        <div class="timeSquare">14:30</div>
+        <div class="timeSquare">15:00</div>
+    </div>
+    <div class="masterCard">
+        
+            <img src="" class="masterImg" alt="">
+        <div >
+            <span id="masterName" class="masterName"></span>
+        </div>
+        <div class="param">
+            <span>2500.00 KZT 20 мин</span>
+        </div>
+    </div>
+    <div class="ConfirmBtn">
+        <a href="/confirm" type="button">Продолжить</a>
+    </div>
+    <script src="/public/js/appointment.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="/public/js/fdb_config.js" id="MainScript"></script>
+</body>
+</html>
