@@ -82,7 +82,7 @@ app.post('/confirmed',async(req,res)=>{
     res.clearCookie('name');
     res.clearCookie('service');
     res.clearCookie('time');
-    //await fdb.collection('company').doc('RfRUsgTbyhQLijxXMaMQ').collection('employers_schedule').add(data)
+    await fdb.collection('company').doc('RfRUsgTbyhQLijxXMaMQ').collection('employers_schedule').add(data)
     res.redirect('/')
     
  
