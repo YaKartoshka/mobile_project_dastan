@@ -7,4 +7,12 @@ $('.wtd_item').click(function(){
 
 });
 var emp_name=document.querySelector('.name');
-emp_name.innerHTML=sessionStorage.getItem('employer_name')
+emp_name.innerHTML=sessionStorage.getItem('employer_name');
+
+async function showServices(){
+var services=fdb.collection('company').doc('RfRUsgTbyhQLijxXMaMQ').collection('employers')
+.doc('MjyUeCNgssGXsrBWVH1K').collection('services')
+
+
+}
+showServices();

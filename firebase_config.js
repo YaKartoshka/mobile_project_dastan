@@ -1,5 +1,6 @@
 const firebase=require('firebase/app');
 require('firebase/auth');
+
 const firebaseConfig = {
     apiKey: "AIzaSyCae2s-xNeb7UZHjPSGySkwviiWaMp7F0c",
     authDomain: "database-zapis.firebaseapp.com",
