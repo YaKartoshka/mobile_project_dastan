@@ -1,5 +1,5 @@
 
-
+showEmployers();
 async function showEmployers(){
     console.log('start');
     var employer_div=document.querySelector('.employers');
@@ -65,4 +65,4 @@ async function showEmployers(){
     });
 
 }
-showEmployers();
+
