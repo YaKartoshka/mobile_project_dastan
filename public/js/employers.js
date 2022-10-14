@@ -43,10 +43,11 @@ async function showEmployers(){
                     $('.emp_item').removeClass("emp_item_chosen");
                     var name=$(this).children().children(".info").children(".name");
                     $(this).addClass("emp_item_chosen");
-                    
+                    var id=$(this).attr('id')
                     $('.btn_next').addClass("btn_next_up");
                     document.cookie = encodeURIComponent('name') + '=' + encodeURIComponent(name.text());
                     sessionStorage.setItem('employer_name',name.text());
+                    sessionStorage.setItem('fid',id);
                     console.log(document.cookie)
                 });
                 
