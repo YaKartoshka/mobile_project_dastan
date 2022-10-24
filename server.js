@@ -19,45 +19,49 @@ app.use(cookieParser());
 app.use('/css', express.static(__dirname + '/public'))
 app.use("/public", express.static(__dirname + "/public"));
 
-app.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname+'/views/startpage.html'))  
+app.get('/:fid',(req,res)=>{
+    
+   
+    res.sendFile(path.join(__dirname+'/views/startpage.html'));
+  
+    
 });
 
-app.get('/employers',(req,res)=>{
+app.get('/:fid/employers',(req,res)=>{
     const dom = new JSDOM(path.join(__dirname+'/views/employers.html'));
     const element=dom.window.document.querySelector(".btn_next");
-    console.log(path.join(__dirname+'/views/employers.html'))
+    
     res.sendFile(path.join(__dirname+'/views/employers.html'))  
 });
 
-app.get('/services',(req,res)=>{
+app.get('/:fid/services',(req,res)=>{
     res.sendFile(path.join(__dirname+'/views/services.html'))  
 });
 
-app.get('/startpage',(req,res)=>{
+app.get('/:fid/startpage',(req,res)=>{
    
 
     res.sendFile(path.join(__dirname+'/views/startpage.html'))  
 });
 
-app.post('/infopage',(req,res)=>{
+app.post('/:fid/infopage',(req,res)=>{
     console.log(req.body)
 
     res.sendFile(path.join(__dirname+'/views/infopage.html'))  
 });
 
-app.get('/appointment',(req,res)=>{
+app.get('/:fid/appointment',(req,res)=>{
     console.log(req.body)
    
     res.sendFile(path.join(__dirname+'/views/appointment.html'))  
 });
 
-app.get('/confirm',(req,res)=>{
+app.get('/:fid/confirm',(req,res)=>{
    
     res.sendFile(path.join(__dirname+'/views/confirm.html'))  
 });
 
-app.post('/confirmed',async(req,res)=>{
+app.post('/:fid/confirmed',async(req,res)=>{
     const {user_name,surname,number,comment}=req.body;
 
     const employer_name=req.cookies['name'];
@@ -77,13 +81,14 @@ app.post('/confirmed',async(req,res)=>{
         user_number: number,
         comment:comment
     }
+    var fid=req.params['fid']
     
     
+    await fdb.collection('company').doc('RfRUsgTbyhQLijxXMaMQ').collection('employers_schedule').add(data)
     res.clearCookie('name');
     res.clearCookie('service');
     res.clearCookie('time');
-    await fdb.collection('company').doc('RfRUsgTbyhQLijxXMaMQ').collection('employers_schedule').add(data)
-    res.redirect('/')
+    res.redirect(`/${fid}`)
     
  
 })
@@ -127,7 +132,8 @@ const getMonth=(month)=>{
     }
     
 }
+
 app.listen(port, ()=>{
-    console.log(`App listening at http://localhost:${port}`);
+    console.log(`App listening at http://localhost:${port}/RfRUsgTbyhQLijxXMaMQ`);
 });
 

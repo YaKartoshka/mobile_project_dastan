@@ -1,10 +1,18 @@
 
+var fid=getCookie('fid');
+setUrl();
 showEmployers();
+function setUrl(){
+    var first_action=document.getElementById('infopage');
+    first_action.setAttribute('action',`/${fid}/infopage`);
+    console.log(fid)
+}
+
 async function showEmployers(){
     console.log('start');
     var employer_div=document.querySelector('.employers');
-    console.log(employer_div);
-    const employers=fdb.collection('company').doc('RfRUsgTbyhQLijxXMaMQ').collection('employers');
+    
+    const employers=fdb.collection('company').doc(`${fid}`).collection('employers');
     const employers_qS=await employers.get();
     
     employers_qS.forEach(doc=>{
@@ -65,4 +73,8 @@ async function showEmployers(){
     });
 
 }
-
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }

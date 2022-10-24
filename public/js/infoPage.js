@@ -1,12 +1,20 @@
 
 var emp_name=document.querySelector('.name');
 emp_name.innerHTML=sessionStorage.getItem('employer_name');
+var fid=getCookie('fid');
+setUrl();
+function setUrl(){
+    var first_url=document.getElementById('employers');
+    var second_url=document.getElementById('appointment');
+    first_url.setAttribute('href',`/${fid}/employers`);
+    second_url.setAttribute('href',`/${fid}/appointment`);
+}
 
 async function showServices(){
-    var fid=sessionStorage.getItem('fid');
+    var fid_user=sessionStorage.getItem('fid');
     var services_list=document.querySelector('#services');
     var services=fdb.collection('company').doc('RfRUsgTbyhQLijxXMaMQ').collection('employers')
-    .doc(`${fid}`).collection('services');
+    .doc(`${fid_user}`).collection('services');
     var services_qS=await services.get();
 
     services_qS.forEach(doc=>{
@@ -42,3 +50,8 @@ async function showServices(){
             </div>*/
 
 showServices();
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }

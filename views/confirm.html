@@ -10,11 +10,11 @@
 <body>
     <header class="header">
         <div class="headerContent">
-            <a href="/appointment" class="previous"><</a>
+            <a href="/appointment" class="previous" id="appointment"><</a>
             <p class="header_text">Подтвердите запись</p>
         </div>
     </header>
-    <form action="/confirmed" method="post">
+    <form action="/confirmed" method="post" id="confirmed">
     <div class="ConfirmContainer">
         <div class="ClientData">
             <div class="Name">
@@ -45,5 +45,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="/public/js/fdb_config.js" id="MainScript"></script>
+    <script src="/public/js/confirm.js"></script>
 </body>
 </html>

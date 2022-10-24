@@ -1,3 +1,6 @@
+
+
+
 const dropdowns = document.querySelectorAll('.dropdown')
 const dropdownsToArray = Array.apply(null, dropdowns);
 

@@ -1,9 +1,25 @@
-
+var fid=getCookie('fid');
 showName();
+setUrl();
+
 function showName(){
   var name_master=sessionStorage.getItem('employer_name');
   document.getElementById('masterName').innerHTML=name_master;
 }
+
+function setUrl(){
+    var first_url=document.getElementById('employers');
+    var second_url=document.getElementById('confirm');
+    first_url.setAttribute('href',`/${fid}/employers`);
+    second_url.setAttribute('href',`/${fid}/confirm`);
+}
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
 
 
 
@@ -13,6 +29,7 @@ $(".timeSquare").click(function () {
   $(".timeSquare").removeClass('timeSquarePicked')
   $(this).addClass('timeSquarePicked')
 });
+
 function CalendarControl() {
   let save
   const calendar = new Date();
