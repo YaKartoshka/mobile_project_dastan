@@ -6,14 +6,14 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #120022e9;
+    background-color: whitesmoke;
 }
 header{
     font-size: 20px;
     color: white;
     padding: 10px;
     text-align: center;
-    background-color: rgb(26, 26, 26);
+    background-color: #92a1d1;
 }
 main{
     display: flex;
@@ -24,7 +24,7 @@ main{
 }
 .profile{
     gap: 10px;
-    color: white;
+    color: gray;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,7 +32,8 @@ main{
 .profile_pic{
     width: 80px;
     border-radius: 50%;
-    border: 1px solid gray;
+    border: 1px solid #92a1d1;
+    background-color: #92a1d1;
 }
 .name{
     font-size: 30px;
@@ -49,6 +50,8 @@ main{
 .example_pic{
     width: 60px;
     border-radius: 15px;
+    background-color: #92a1d1;
+    border: 1px solid #92a1d1;
 }
 .wtd_title{
     color: gray;
@@ -62,7 +65,7 @@ main{
     padding: 5px 10px;
     border-radius: 10px;
     
-    background-color: rgb(26, 26, 26);
+    background-color: #92a1d1;
     height: 50px;
     display: flex;
     flex-direction: column;
@@ -70,13 +73,13 @@ main{
 }
 
 .wtd_item_chosen{
-    border: 1px solid gray;
+    border: 2px solid lightblue;
 }
 .title{
     color: white;
 }
 .price{
-    color: gray;
+    color: white;
 }
 
 a {
@@ -85,7 +88,7 @@ a {
   }
   
   a:hover {
-    color: gray;
+    color: lightgray;
   }
   
   .previous {
@@ -119,7 +122,7 @@ a {
     border-radius: 10px;
     border: none;
     outline: none;
-    background-color: #585095e9;
+    background-color: #6174b3b7;
     margin-left: -67.5px;
     transition: 0.5s;
     bottom: -200px;

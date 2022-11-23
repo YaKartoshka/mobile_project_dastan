@@ -3,8 +3,10 @@ var fid=getCookie('fid');
 setUrl();
 showEmployers();
 function setUrl(){
+    var first_url=document.getElementById('startpage');
     var first_action=document.getElementById('infopage');
     first_action.setAttribute('action',`/${fid}/infopage`);
+    first_url.setAttribute('href',`/${fid}/startpage`);
     console.log(fid)
 }
 

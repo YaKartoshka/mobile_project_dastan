@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap');
 
 :root {
-    --calendar-bg-color: #262829;
+    --calendar-bg-color: #92a1d1;
     --calendar-font-color: #FFF;
-    --weekdays-border-bottom-color: #404040;
-    --calendar-date-hover-color: #505050;
-    --calendar-current-date-color: #1b1f21;
-    --calendar-today-color: linear-gradient(to bottom, #03a9f4, #2196f3);
+    --weekdays-border-bottom-color: #fff;
+    --calendar-date-hover-color: #fff;
+    --calendar-current-date-color: #5ea0dd;
+    --calendar-today-color: linear-gradient(to bottom, #5ea0dd, #2196f3);
     --calendar-today-innerborder-color: transparent;
     --calendar-nextprev-bg-color: transparent;
     --next-prev-arrow-color : #FFF;
@@ -26,7 +26,7 @@ br{
 body {
     
     font-family: 'Roboto', sans-serif;
-    background-color: #120022e9;
+    background-color: whitesmoke;
 }
 @media (max-width:480px) {
     body{
@@ -42,13 +42,13 @@ body {
 }
 .header {
     margin-bottom: auto;
-    border-bottom: 2px gray solid;
+    border-bottom: 2px lightgray solid;
     color: whitesmoke;
     font-size: 20px;
     padding: 15px 0;
     text-align: center;
     width: 100%;
-    background-color: rgb(26, 26, 26);
+    background-color: #92a1d1;
 }
 
 .masterCard{
@@ -58,9 +58,8 @@ body {
     width: 90%;
     height: 120px;
     margin: 0 auto;
-    background-color: rgb(26, 26, 26);
+    background-color: #92a1d1;
     border-radius: 10px;
-    gap: 20px;
 }
 
 .masterName{
@@ -81,14 +80,18 @@ body {
     gap: 10px;
 }
 .timeSquare{
+    cursor: pointer;
     text-align: center;
     padding: 14px;
     border-radius: 10px;
     width: fit-content;
-    background-color: rgb(26, 26, 26);
+    background-color: #92a1d1;
+}
+.timeSquare:hover{
+    border: 1px solid white;
 }
 .timeSquarePicked{
-    border: 1px gray solid;
+    background: var(--calendar-today-color);
 }
 .masterImg{
     width: 80px;
@@ -96,7 +99,7 @@ body {
 }
 
 .param{
-    color: gray;
+    color: white;
     font-size: 15px;
 }
 
@@ -118,9 +121,7 @@ body {
 .calendar-inner {
     padding: 10px 10px;
 }
-.calendar-body{
-    
-}
+
 .calendar .calendar-inner .calendar-body {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -257,6 +258,10 @@ a {
     color: white
   }
 
+  .previous:hover{
+      color: lightgray;
+  }
+
   .headerContent{
       display: flex;
       justify-content: space-between;
@@ -269,26 +274,27 @@ a {
     align-items: center;
 }
 .ConfirmBtn{
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 135px;
     height: 30px;
-    margin: 0 auto;
-    margin-top: 50px;
+    margin: 50px auto;
+    
 }
 .ConfirmBtn>a{
-    margin-top: 50px;
     cursor: pointer;
     width: 135px;
     height: 25px;
-    
+    padding: 20px 45px;
     color: white;
     font-size: 15px;
-    align-items: center;
+    
     
     border-radius: 10px;
     border: none;
     outline: none;
-    background-color: #585095e9;
+    background-color: #92a1d1;
     
     transition: 0.5s;
     text-align: center;

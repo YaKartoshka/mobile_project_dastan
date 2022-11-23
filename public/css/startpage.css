@@ -10,17 +10,17 @@ body{
     overflow: hidden;
     height: 100%;
     font-family: 'Roboto', sans-serif;
-    background-color: #120022e9;
+    background-color: whitesmoke;
 }
 .header{
     margin-bottom: auto;
-    border-bottom: 2px gray solid;
+    border-bottom: 2px lightgrey solid;
     color: whitesmoke;
     font-size: 20px;
     padding: 15px 0;
     text-align: center;
     width: 100%;
-    background-color: rgb(26, 26, 26);
+    background-color: #92a1d1;
 }
 .specialist{
     display: flex;
@@ -30,7 +30,7 @@ body{
     width: 85%;
     height: 80px;
     margin: 0 auto;
-    background-color: rgb(26, 26, 26);
+    background-color: #92a1d1;
     
     
     border-radius: 10px;
@@ -44,7 +44,7 @@ a{
     width: 85%;
     height: 80px;
     margin: 0 auto;
-    background-color: rgb(26, 26, 26);
+    background-color: #92a1d1;
     
     
     border-radius: 10px;

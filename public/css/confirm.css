@@ -10,17 +10,17 @@ body{
     overflow: hidden;
     height: 100%;
     font-family: 'Roboto', sans-serif;
-    background-color: #120022e9;
+    background-color: whitesmoke;
 }
 .header{
     margin-bottom: auto;
-    border-bottom: 2px gray solid;
+    border-bottom: 2px lightgray solid;
     color: whitesmoke;
     font-size: 20px;
     padding: 15px 0;
     text-align: center;
     width: 100%;
-    background-color: rgb(26, 26, 26);
+    background-color: #92a1d1;
 }
 
 .ConfirmContainer{
@@ -35,7 +35,7 @@ body{
     margin-bottom: 20px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(26, 26, 26);
+    background-color: #92a1d1;
     gap: 20px;
     padding: 10px;
     display: flex;
@@ -44,12 +44,16 @@ body{
     color: white;
 }
 
+::placeholder{
+    color: whitesmoke;
+}
+
 .Surname>input{
     margin: 0 auto;
     margin-bottom: 20px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(26, 26, 26);
+    background-color: #92a1d1;
     gap: 20px;
     padding: 10px;
     display: flex;
@@ -61,7 +65,7 @@ body{
 .Number>input{
     margin: 0 auto;
     border-radius: 10px;
-    background-color: rgb(26, 26, 26);
+    background-color: #92a1d1;
     gap: 20px;
     border: none;
     padding: 10px;
@@ -74,7 +78,7 @@ body{
 .Comment>textarea{
     margin: 0 auto;
     border-radius: 10px;
-    background-color: rgb(26, 26, 26);
+    background-color: #92a1d1;
     gap: 20px;
     border: none;
     padding: 10px;
@@ -115,7 +119,7 @@ body{
     border-radius: 10px;
     border: none;
     outline: none;
-    background-color: #585095e9;
+    background-color: #92a1d1;
     margin-left: -67.5px;
     transition: 0.5s;
  
@@ -124,6 +128,7 @@ body{
 a {
     text-decoration: none;
     padding: 8px 16px;
+    color: #92a1d1;
   }
   
   a:hover {
@@ -133,6 +138,10 @@ a {
   .previous {
     padding-bottom: 10px;
     color: white
+  }
+
+  .previous:hover{
+      color: lightgray;
   }
 
   .headerContent{
