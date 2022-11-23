@@ -2,9 +2,12 @@ var fid=getCookie('fid');
 showName();
 setUrl();
 
+
+
 function showName(){
   var name_master=sessionStorage.getItem('employer_name');
   document.getElementById('masterName').innerHTML=name_master;
+  
 }
 
 function setUrl(){
@@ -21,6 +24,13 @@ function getCookie(name) {
 }
 
 
+function remove(){
+  var cards = document.querySelectorAll('.timeSquare');
+  cards.forEach(card=>{
+      card.remove();
+  });
+  
+}
 
 
 
@@ -29,7 +39,6 @@ $(".timeSquare").click(function () {
   $(".timeSquare").removeClass('timeSquarePicked')
   $(this).addClass('timeSquarePicked')
 });
-
 function CalendarControl() {
   let save
   const calendar = new Date();
@@ -125,6 +134,7 @@ function CalendarControl() {
     
     selectDate: function (e) {
       let pickedDate = document.getElementById('pickedDate')
+     
       pickedDate.textContent = (
 
         `${e.target.textContent} ${calendarControl.calMonthName[calendar.getMonth()]
@@ -183,8 +193,10 @@ function CalendarControl() {
       calendarControl.highlightToday();
       calendarControl.plotPrevMonthDates(prevMonthDatesArray);
       calendarControl.plotNextMonthDates();
+   
     },
     attachEvents: function () {
+      
       let prevBtn = document.querySelector(".calendar .calendar-prev a");
       let nextBtn = document.querySelector(".calendar .calendar-next a");
       let todayDate = document.querySelector(".calendar .calendar-today-date");
@@ -198,6 +210,7 @@ function CalendarControl() {
       todayDate.addEventListener(
         "click",
         calendarControl.navigateToCurrentMonth
+  
       );
       for (var i = 0; i < dateNumber.length; i++) {
         dateNumber[i].addEventListener(
@@ -291,12 +304,42 @@ function CalendarControl() {
     }
   };
   calendarControl.init();
-
+  showTimeSquares();
+  let todayDate = document.querySelector(".calendar .calendar-today-date");
+  $(".number-item").click(async function (){
+    $(".calendar-today").removeClass('calendar-today')
+    $(this).addClass('calendar-today');
+    remove();
+   await showTimeSquares();
+    calendarControl.attachEvents();
+  });
+  
   document.querySelectorAll(".number-item").addEventListener('click', () => openModal(Date))
 }
 
 const calendarControl = new CalendarControl();
-
+async function showTimeSquares(){
+ 
+  var employer_name=('name');
+  const employers_sch=fdb.collection('company').doc(`${fid}`).collection('employers_schedule');
+  const employers_sch_qS=await employers_sch.where('name','==',employer_name).get();
+  var time_block=document.querySelector('.time');
+  var timeSquares=['10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30',
+                  '14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30',
+                  '18:00','18:30','19:00','19:30','20:00','20:30','21:00'];
+  timeSquares.forEach((item,i,array)=>{
+    var newDiv=document.createElement('div');
+    newDiv.classList.add('timeSquare');
+    newDiv.innerHTML=item;
+    time_block.insertAdjacentElement('beforeend',newDiv);
+    $(".timeSquare").click(function () {
+      $(".timeSquare").removeClass('timeSquarePicked')
+      $(this).addClass('timeSquarePicked')
+    });
+  })
+  
+  
+}
 
 
   
