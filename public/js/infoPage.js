@@ -13,7 +13,7 @@ function setUrl(){
 async function showServices(){
     var fid_user=sessionStorage.getItem('fid');
     var services_list=document.querySelector('#services');
-    var services=fdb.collection('company').doc('RfRUsgTbyhQLijxXMaMQ').collection('employers')
+    var services=fdb.collection('company').doc(`${fid}`).collection('employers')
     .doc(`${fid_user}`).collection('services');
     var services_qS=await services.get();
 

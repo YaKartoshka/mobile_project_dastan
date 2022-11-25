@@ -84,7 +84,7 @@ app.post('/:fid/confirmed',async(req,res)=>{
     var fid=req.params['fid']
     
     
-    await fdb.collection('company').doc('RfRUsgTbyhQLijxXMaMQ').collection('employers_schedule').add(data)
+    await fdb.collection('company').doc(`${fid}`).collection('employers_schedule').add(data)
     res.clearCookie('name');
     res.clearCookie('service');
     res.clearCookie('time');
