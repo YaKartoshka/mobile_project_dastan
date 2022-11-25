@@ -32,6 +32,47 @@ function remove(){
   
 }
 
+const getMonth=(month)=>{
+  if(month=="Сентябрь"){
+      return '09'
+  }
+  if(month=="Октябрь"){
+      return '10'
+  }
+  if(month=="Ноябрь"){
+      return '11'
+  }
+  if(month=="Декабрь"){
+      return '12'
+  }
+  if(month=="Январь"){
+      return '01'
+  }
+  if(month=="Февраль"){
+      return '02'
+  }
+  if(month=="Март"){
+      return '03'
+  }
+  if(month=="Апрель"){
+      return '04'
+  }
+  if(month=="Май"){
+      return '05'
+  }
+  if(month=="Июнь"){
+      return '06'
+  }
+  if(month=="Июль"){
+      return '07'
+  }
+  if(month=="Август"){
+      return '08'
+  }
+  
+}
+  
+  
 
 
 
@@ -306,11 +347,13 @@ function CalendarControl() {
   calendarControl.init();
   showTimeSquares();
   let todayDate = document.querySelector(".calendar .calendar-today-date");
+
   $(".number-item").click(async function (){
     $(".calendar-today").removeClass('calendar-today')
     $(this).addClass('calendar-today');
     remove();
-   await showTimeSquares();
+    console.log
+    await showTimeSquares();
     calendarControl.attachEvents();
   });
   
@@ -318,15 +361,30 @@ function CalendarControl() {
 }
 
 const calendarControl = new CalendarControl();
+
 async function showTimeSquares(){
- 
-  var employer_name=('name');
-  const employers_sch=fdb.collection('company').doc(`${fid}`).collection('employers_schedule');
-  const employers_sch_qS=await employers_sch.where('name','==',employer_name).get();
-  var time_block=document.querySelector('.time');
+  var save = $("#pickedDate").text();
+  var array_date=save.split(' ');
+  var day=array_date[0];
+  var month=getMonth(array_date[1]);
+  var year=array_date[2];
+
   var timeSquares=['10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30',
                   '14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30',
                   '18:00','18:30','19:00','19:30','20:00','20:30','21:00'];
+
+  var employer_name=sessionStorage.getItem('employer_name')
+  const employers_sch=fdb.collection('company').doc(`${fid}`).collection('employers_schedule');
+  console.log(`${day}/${month}/${year}`,employer_name)
+  const employers_sch_qS=await employers_sch.where('employer_name','==',employer_name).where('date','==',`${day}/${month}/${year}`).get();
+  employers_sch_qS.forEach(doc=>{
+   
+     const i = timeSquares.indexOf(doc.data().time);
+    timeSquares.splice(i,1);
+  })
+  //console.log(timeSquares)
+  var time_block=document.querySelector('.time');
+  
   timeSquares.forEach((item,i,array)=>{
     var newDiv=document.createElement('div');
     newDiv.classList.add('timeSquare');
@@ -341,6 +399,3 @@ async function showTimeSquares(){
   
 }
 
-
-  
-  
