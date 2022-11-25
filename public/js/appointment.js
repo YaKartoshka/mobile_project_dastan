@@ -6,7 +6,7 @@ setUrl();
 
 function showName(){
   var name_master=sessionStorage.getItem('employer_name');
-  document.getElementById('masterName').innerHTML=name_master;
+  document.getElementById('masterName').innerHTML=`${name_master}&nbsp`;
   
 }
 
@@ -314,9 +314,20 @@ function CalendarControl() {
         }
       }
     },
-    attachEventsOnNextPrev: function () {
+    attachEventsOnNextPrev: async function () {
       calendarControl.plotDates();
+      remove();
+     
       calendarControl.attachEvents();
+      await showTimeSquares();
+      $(".number-item").click(async function (){
+        console.log('suu')
+        $(".calendar-today").removeClass('calendar-today')
+        $(this).addClass('calendar-today');
+        remove();
+        await showTimeSquares();
+        calendarControl.attachEvents();
+      });
     },
     init: function () {
       calendarControl.plotSelectors();
