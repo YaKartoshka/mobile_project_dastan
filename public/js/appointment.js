@@ -81,7 +81,8 @@ $(".timeSquare").click(function () {
   $(this).addClass('timeSquarePicked')
 });
 function CalendarControl() {
-  let save
+  let save;
+
   const calendar = new Date();
   const calendarControl = {
     localDate: new Date(),
@@ -321,6 +322,7 @@ function CalendarControl() {
       calendarControl.plotSelectors();
       calendarControl.plotDates();
       calendarControl.attachEvents();
+      
     },
     openModal: function (date) {
       clicked = date;
@@ -345,30 +347,38 @@ function CalendarControl() {
     }
   };
   calendarControl.init();
-  showTimeSquares();
+  
+ 
   let todayDate = document.querySelector(".calendar .calendar-today-date");
 
   $(".number-item").click(async function (){
+    console.log('suu')
     $(".calendar-today").removeClass('calendar-today')
     $(this).addClass('calendar-today');
     remove();
-    console.log
     await showTimeSquares();
     calendarControl.attachEvents();
   });
-  
+  async function choseDay(){
+    
+    
+   
+    await showTimeSquares();
+    calendarControl.attachEvents();
+  }
+  choseDay()
   document.querySelectorAll(".number-item").addEventListener('click', () => openModal(Date))
 }
 
 const calendarControl = new CalendarControl();
 
 async function showTimeSquares(){
+  
   var save = $("#pickedDate").text();
   var array_date=save.split(' ');
   var day=array_date[0];
   var month=getMonth(array_date[1]);
   var year=array_date[2];
-
   var timeSquares=['10:00','10:30','11:00','11:30','12:00','12:30','13:00','13:30',
                   '14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30',
                   '18:00','18:30','19:00','19:30','20:00','20:30','21:00'];
