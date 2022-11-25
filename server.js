@@ -45,19 +45,19 @@ app.get('/:fid/startpage',(req,res)=>{
 });
 
 app.post('/:fid/infopage',(req,res)=>{
-    console.log(req.body)
+   
 
     res.sendFile(path.join(__dirname+'/views/infopage.html'))  
 });
 
 app.get('/:fid/appointment',(req,res)=>{
-    console.log(req.body)
+    
    
     res.sendFile(path.join(__dirname+'/views/appointment.html'))  
 });
 
 app.get('/:fid/confirm',(req,res)=>{
-   
+   console.log(req.cookies)
     res.sendFile(path.join(__dirname+'/views/confirm.html'))  
 });
 
