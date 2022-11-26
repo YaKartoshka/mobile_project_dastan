@@ -6,7 +6,7 @@ function setUrl(){
     var first_url=document.getElementById('startpage');
     var first_action=document.getElementById('infopage');
     first_action.setAttribute('action',`/${fid}/infopage`);
-    first_url.setAttribute('href',`/${fid}/startpage`);
+    first_url.setAttribute('href',`/${fid}`);
     console.log(fid)
 }
 
@@ -57,7 +57,10 @@ async function showEmployers(){
                     $('.btn_next').addClass("btn_next_up");
                     document.cookie = encodeURIComponent('name') + '=' + encodeURIComponent(name.text());
                     sessionStorage.setItem('employer_name',name.text());
-                    sessionStorage.setItem('fid',id);
+                    if(sessionStorage.getItem('fid')==null){
+                        sessionStorage.setItem('fid',id);
+                    }
+                    
                     console.log(document.cookie)
                 });
                 

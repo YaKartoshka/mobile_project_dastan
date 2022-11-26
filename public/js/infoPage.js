@@ -38,8 +38,10 @@ async function showServices(){
             $('.wtd_item').removeClass("wtd_item_chosen");
             $(this).addClass("wtd_item_chosen");
             var service=$(this).children(".title");
+            var service_data=$(this).children(".price")
             $('.btn_next').addClass("btn_next_up");
             document.cookie= encodeURIComponent('service') + '=' + encodeURIComponent(service.text());
+            sessionStorage.setItem('service_data',service_data.text());
         
         });
     })

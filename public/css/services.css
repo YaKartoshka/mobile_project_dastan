@@ -180,3 +180,32 @@ a {
     font-size: 15px;
 }
 
+/* .wtd_title{
+    color: gray;
+    padding: 5px 10px;
+}
+.wtd{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.wtd_item{
+    padding: 5px 10px;
+    border-radius: 10px;
+    
+    background-color: #92a1d1;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.wtd_item_chosen{
+    border: 2px solid lightblue;
+}
+.title{
+    color: white;
+}
+.price{
+    color: white;
+} */

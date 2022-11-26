@@ -6,8 +6,9 @@ setUrl();
 
 function showName(){
   var name_master=sessionStorage.getItem('employer_name');
+  var service_data=sessionStorage.getItem('service_data');
   document.getElementById('masterName').innerHTML=`${name_master}&nbsp`;
-  
+  document.getElementById('service_data').innerHTML=`${service_data}`
 }
 
 function setUrl(){
