@@ -25,8 +25,8 @@ var fid=getCookie('fid');
   }
   
   function setUrl(){
-    var first_url=document.getElementById('startpage');
-    first_url.setAttribute('href',`/${fid}`);
+    var first_url=document.getElementById('employers');
+    first_url.setAttribute('href',`/${fid}/employers`);
    
     console.log(fid)
 }
@@ -57,18 +57,26 @@ setUrl();
             p_title.innerHTML=service_name;
             newDiv.innerHTML=p_title.outerHTML+p_price.outerHTML;
             services_list.insertAdjacentElement('beforeend',newDiv);
-            // $('.wtd_item').click(function(){
-            //     $('.wtd_item').removeClass("wtd_item_chosen");
-            //     $(this).addClass("wtd_item_chosen");
-            //     var service=$(this).children(".title");
-            //     var service_data=$(this).children(".price")
-            //     $('.btn_next').addClass("btn_next_up");
-            //     document.cookie= encodeURIComponent('service') + '=' + encodeURIComponent(service.text());
-            //     sessionStorage.setItem('service_data',service_data.text());
-            // });
+            $('.wtd_item').click(function(){
+                $('.wtd_item').removeClass("wtd_item_chosen");
+                $(this).addClass("wtd_item_chosen");
+                var service=$(this).children(".title");
+                var service_data=$(this).children(".price")
+                $('.btn_next').addClass("btn_next_up");
+                document.cookie= encodeURIComponent('service') + '=' + encodeURIComponent(service.text());
+                sessionStorage.setItem('service_data',service_data.text());
+            });
         })
     })
     
     
 }
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
 showServices();
+
