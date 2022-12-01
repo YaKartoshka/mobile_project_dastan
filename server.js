@@ -34,6 +34,10 @@ app.get('/:fid/employers',(req,res)=>{
     res.sendFile(path.join(__dirname+'/views/employers.html'))  
 });
 
+app.get('/:fid/a_employers',(req,res)=>{
+    res.sendFile(path.join(__dirname+'/views/after_employers.html'))  
+});
+
 app.get('/:fid/services',(req,res)=>{
     res.sendFile(path.join(__dirname+'/views/services.html'))  
 });
@@ -51,8 +55,10 @@ app.post('/:fid/infopage',(req,res)=>{
 });
 
 app.get('/:fid/appointment',(req,res)=>{
-    
-   
+    res.sendFile(path.join(__dirname+'/views/appointment.html'))  
+});
+
+app.post('/:fid/appointment',(req,res)=>{
     res.sendFile(path.join(__dirname+'/views/appointment.html'))  
 });
 

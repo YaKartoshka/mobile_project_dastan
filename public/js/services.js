@@ -26,8 +26,11 @@ var fid=getCookie('fid');
   
   function setUrl(){
     var first_url=document.getElementById('employers');
-    first_url.setAttribute('href',`/${fid}/employers`);
-   
+    var second_url=document.getElementById('startpage');
+
+    first_url.setAttribute('href',`/${fid}/a_employers`);
+    second_url.setAttribute('href',`/${fid}`);
+    
     console.log(fid)
 }
 setUrl();
@@ -35,14 +38,16 @@ setUrl();
   async function showServices(){
     var fid_user=sessionStorage.getItem('fid');
     var services_list=document.querySelector('#services');
+    var dupl_services=[];
     var employers=fdb.collection('company').doc(`${fid}`).collection('employers');
     var employers_qS=await employers.get()
     employers_qS.forEach(async(doc)=>{
 
         var services_qS=await employers.doc(`${doc.id}`).collection('services').get();
         services_qS.forEach(sub_doc=>{
-
+            if(!dupl_services.includes(sub_doc.data().service_name)){
             var service_name=sub_doc.data().service_name;
+            dupl_services.push(service_name);
             var service_during=sub_doc.data().service_during;
             var service_price=sub_doc.data().service_price;
             var newDiv=document.createElement('div');
@@ -65,8 +70,11 @@ setUrl();
                 $('.btn_next').addClass("btn_next_up");
                 document.cookie= encodeURIComponent('service') + '=' + encodeURIComponent(service.text());
                 sessionStorage.setItem('service_data',service_data.text());
+                
             });
+          }
         })
+      
     })
     
     
