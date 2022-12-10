@@ -22,6 +22,7 @@ async function showEmployers(){
                 let employer_name = doc.data().name;
                 let employer_surname = doc.data().surname;
                 let quality=doc.data().quality;
+                let profile_image=doc.data().profile_image;
                 var newDiv = document.createElement("div");
                 var div_itemleft=document.createElement("div");
                 var div_info=document.createElement("div");
@@ -34,7 +35,12 @@ async function showEmployers(){
                 newDiv.id = doc.id;
                 div_itemleft.classList.add('item_left');
                 image.classList.add('avatar');
-                image.setAttribute('src','/public/img/user.svg');
+                if(profile_image==null || profile_image==undefined){
+                    image.setAttribute('src','/public/img/user.svg');
+                }else{
+                    image.setAttribute('src',`${profile_image}`);
+                }
+                
                 div_info.classList.add('info');
                 p_name.classList.add('name');
                 p_wtd.classList.add('wtd');
