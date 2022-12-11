@@ -9,7 +9,6 @@ function setUrl(){
     first_url.setAttribute('href',`/${fid}`);
     console.log(fid)
 }
-
 async function showEmployers(){
     console.log('start');
     var employer_div=document.querySelector('.employers');

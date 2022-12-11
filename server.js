@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express=require('express');
 const app=express();
 const path=require('path');
@@ -7,7 +8,6 @@ const jsdom = require("jsdom");
 const { AsyncLocalStorage } = require('async_hooks');
 const { lchmod } = require('fs');
 const { JSDOM } = jsdom;
-const firebase=require('./firebase_config');
 require('./admin_config')
 const admin = require("firebase-admin");
 const fdb=admin.firestore();
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use('/css', express.static(__dirname + '/public'))
 app.use("/public", express.static(__dirname + "/public"));
-
+console.log(process.env.FIREBASE_API_KEY)
 app.get('/:fid',(req,res)=>{
     
    
