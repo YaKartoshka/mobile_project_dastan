@@ -155,3 +155,9 @@ a {
     justify-content: center;
     align-items: center;
 }
+
+input::placeholder {
+    font-weight: bold;
+    opacity: .5;
+    color: rgb(255, 255, 255);
+}
