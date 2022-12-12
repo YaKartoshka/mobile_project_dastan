@@ -1,20 +1,20 @@
 
-var fid=getCookie('fid');
+var mfid=getCookie('mfid');
 setUrl();
 showEmployers();
 function setUrl(){
     var first_url=document.getElementById('services');
     var first_action=document.getElementById('appointment');
-    first_action.setAttribute('action',`/${fid}/appointment`);
-    first_url.setAttribute('href',`/${fid}/services`);
-    console.log(fid)
+    first_action.setAttribute('action',`/${mfid}/appointment`);
+    first_url.setAttribute('href',`/${mfid}/services`);
+    console.log(mfid)
 }
 
 async function showEmployers(){
     console.log('start');
     var employer_div=document.querySelector('.employers');
     var service_name=decodeURI(getCookie('service'));
-    const employers=fdb.collection('company').doc(`${fid}`).collection('employers');
+    const employers=fdb.collection('company').doc(`${mfid}`).collection('employers');
     const employers_qS=await employers.get();
    
     employers_qS.forEach(async(doc)=>{
@@ -63,8 +63,8 @@ async function showEmployers(){
                         $('.btn_next').addClass("btn_next_up");
                         document.cookie = encodeURIComponent('name') + '=' + encodeURIComponent(name.text());
                         sessionStorage.setItem('employer_name',name.text());
-                        if(sessionStorage.getItem('fid')==null){
-                            sessionStorage.setItem('fid',id);
+                        if(sessionStorage.getItem('mfid')==null){
+                            sessionStorage.setItem('mfid',id);
                         }
                         
                 

@@ -1,4 +1,4 @@
-var fid=getCookie('fid');
+var mfid=getCookie('mfid');
 showName();
 setUrl();
 
@@ -14,8 +14,8 @@ function showName(){
 function setUrl(){
     var first_url=document.getElementById('employers');
     var second_url=document.getElementById('confirm');
-    first_url.setAttribute('href',`/${fid}/employers`);
-    second_url.setAttribute('href',`/${fid}/confirm`);
+    first_url.setAttribute('href',`/${mfid}/employers`);
+    second_url.setAttribute('href',`/${mfid}/confirm`);
 }
 
 function getCookie(name) {
@@ -393,7 +393,7 @@ async function showTimeSquares(){
                   '18:00','18:30','19:00','19:30','20:00','20:30','21:00'];
 
   var employer_name=sessionStorage.getItem('employer_name')
-  const employers_sch=fdb.collection('company').doc(`${fid}`).collection('employers_schedule');
+  const employers_sch=fdb.collection('company').doc(`${mfid}`).collection('employers_schedule');
   console.log(`${day}/${month}/${year}`,employer_name)
   const employers_sch_qS=await employers_sch.where('employer_name','==',employer_name).where('date','==',`${day}/${month}/${year}`).get();
   employers_sch_qS.forEach(doc=>{

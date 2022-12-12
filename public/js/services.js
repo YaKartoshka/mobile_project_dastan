@@ -3,7 +3,7 @@
 
 const dropdowns = document.querySelectorAll('.dropdown')
 const dropdownsToArray = Array.apply(null, dropdowns);
-var fid=getCookie('fid');
+var mfid=getCookie('mfid');
 
 
 // dropdownsToArray.forEach(dropdown =>{
@@ -28,18 +28,18 @@ var fid=getCookie('fid');
     var first_url=document.getElementById('employers');
     var second_url=document.getElementById('startpage');
 
-    first_url.setAttribute('href',`/${fid}/a_employers`);
-    second_url.setAttribute('href',`/${fid}`);
+    first_url.setAttribute('href',`/${mfid}/a_employers`);
+    second_url.setAttribute('href',`/${mfid}`);
     
-    console.log(fid)
+    console.log(mfid)
 }
 setUrl();
 
   async function showServices(){
-    var fid_user=sessionStorage.getItem('fid');
+    var fid_user=sessionStorage.getItem('mfid');
     var services_list=document.querySelector('#services');
     var dupl_services=[];
-    var employers=fdb.collection('company').doc(`${fid}`).collection('employers');
+    var employers=fdb.collection('company').doc(`${mfid}`).collection('employers');
     var employers_qS=await employers.get()
     employers_qS.forEach(async(doc)=>{
 

@@ -1,19 +1,19 @@
 
-var fid=getCookie('fid');
+var mfid=getCookie('mfid');
 setUrl();
 showEmployers();
 function setUrl(){
     var first_url=document.getElementById('startpage');
     var first_action=document.getElementById('infopage');
-    first_action.setAttribute('action',`/${fid}/infopage`);
-    first_url.setAttribute('href',`/${fid}`);
-    console.log(fid)
+    first_action.setAttribute('action',`/${mfid}/infopage`);
+    first_url.setAttribute('href',`/${mfid}`);
+    console.log(mfid)
 }
 async function showEmployers(){
     console.log('start');
     var employer_div=document.querySelector('.employers');
     
-    const employers=fdb.collection('company').doc(`${fid}`).collection('employers');
+    const employers=fdb.collection('company').doc(`${mfid}`).collection('employers');
     const employers_qS=await employers.get();
     
     employers_qS.forEach(doc=>{
@@ -62,8 +62,8 @@ async function showEmployers(){
                     $('.btn_next').addClass("btn_next_up");
                     document.cookie = encodeURIComponent('name') + '=' + encodeURIComponent(name.text());
                     sessionStorage.setItem('employer_name',name.text());
-                    if(sessionStorage.getItem('fid')==null){
-                        sessionStorage.setItem('fid',id);
+                    if(sessionStorage.getItem('mfid')==null){
+                        sessionStorage.setItem('mfid',id);
                     }
                     
                     console.log(document.cookie)

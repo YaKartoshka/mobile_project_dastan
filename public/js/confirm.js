@@ -1,12 +1,12 @@
-var fid=getCookie('fid');
+var mfid=getCookie('mfid');
 
 setUrl();
 
 function setUrl(){
     var first_url=document.getElementById('appointment');
     var first_action=document.getElementById('confirmed');
-    first_url.setAttribute('href',`/${fid}/appointment`);
-    first_action.setAttribute('action',`/${fid}/confirmed`);
+    first_url.setAttribute('href',`/${mfid}/appointment`);
+    first_action.setAttribute('action',`/${mfid}/confirmed`);
 }
 function getCookie(name) {
     const value = `; ${document.cookie}`;

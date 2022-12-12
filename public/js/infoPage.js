@@ -1,19 +1,19 @@
 
 var emp_name=document.querySelector('.name');
 emp_name.innerHTML=sessionStorage.getItem('employer_name');
-var fid=getCookie('fid');
+var mfid=getCookie('mfid');
 setUrl();
 function setUrl(){
     var first_url=document.getElementById('employers');
     var second_url=document.getElementById('appointment');
-    first_url.setAttribute('href',`/${fid}/employers`);
-    second_url.setAttribute('href',`/${fid}/appointment`);
+    first_url.setAttribute('href',`/${mfid}/employers`);
+    second_url.setAttribute('href',`/${mfid}/appointment`);
 }
 
 async function showServices(){
-    var fid_user=sessionStorage.getItem('fid');
+    var fid_user=sessionStorage.getItem('mfid');
     var services_list=document.querySelector('#services');
-    var services=fdb.collection('company').doc(`${fid}`).collection('employers')
+    var services=fdb.collection('company').doc(`${mfid}`).collection('employers')
     .doc(`${fid_user}`).collection('services');
     var services_qS=await services.get();
 
