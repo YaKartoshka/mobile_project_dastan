@@ -62,9 +62,9 @@ async function showEmployers(){
                     $('.btn_next').addClass("btn_next_up");
                     document.cookie = encodeURIComponent('name') + '=' + encodeURIComponent(name.text());
                     sessionStorage.setItem('employer_name',name.text());
-                    if(sessionStorage.getItem('mfid')==null){
-                        sessionStorage.setItem('mfid',id);
-                    }
+                    // if(sessionStorage.getItem('emp_fid')==null){
+                        sessionStorage.setItem('emp_fid',id);
+                    //  }
                     
                     console.log(document.cookie)
                 });

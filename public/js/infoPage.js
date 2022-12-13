@@ -3,15 +3,21 @@ var emp_name=document.querySelector('.name');
 emp_name.innerHTML=sessionStorage.getItem('employer_name');
 var mfid=getCookie('mfid');
 setUrl();
-function setUrl(){
+async function setUrl(){
     var first_url=document.getElementById('employers');
     var second_url=document.getElementById('appointment');
+    var image_src=document.getElementById('profile_image');
+    var fid_user=sessionStorage.getItem('emp_fid');
     first_url.setAttribute('href',`/${mfid}/employers`);
     second_url.setAttribute('href',`/${mfid}/appointment`);
+    var doc=fdb.collection('company').doc(`${mfid}`).collection('employers')
+    .doc(`${fid_user}`);
+    var emp_doc=await doc.get();
+    image_src.src=emp_doc.data().profile_image;
 }
 
 async function showServices(){
-    var fid_user=sessionStorage.getItem('mfid');
+    var fid_user=sessionStorage.getItem('emp_fid');
     var services_list=document.querySelector('#services');
     var services=fdb.collection('company').doc(`${mfid}`).collection('employers')
     .doc(`${fid_user}`).collection('services');

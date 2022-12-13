@@ -36,7 +36,7 @@ var mfid=getCookie('mfid');
 setUrl();
 
   async function showServices(){
-    var fid_user=sessionStorage.getItem('mfid');
+    var fid_user=sessionStorage.getItem('emp_fid');
     var services_list=document.querySelector('#services');
     var dupl_services=[];
     var employers=fdb.collection('company').doc(`${mfid}`).collection('employers');
