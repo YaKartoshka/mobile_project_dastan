@@ -82,10 +82,10 @@ app.post('/:fid/confirmed',async(req,res)=>{
         service:service,
         date:date,
         time:full_time[4],
-        user_name:user_name,
-        user_surname:surname,
-        user_number: number,
-        comment:comment
+        user_name:user_name.trim(),
+        user_surname:surname.trim(),
+        user_number: number.trim(),
+        comment:comment.trim()
     }
     var fid=req.params['fid']
     
