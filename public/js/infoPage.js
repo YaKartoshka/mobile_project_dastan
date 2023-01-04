@@ -52,10 +52,6 @@ async function showServices(){
         });
     })
 }
-/* <div class="wtd_item" id="3">
-                <p class="title">Стрижка налысо</p>
-                <p class="price">2000тг, 30 минут</p>
-            </div>*/
 
 showServices();
 function getCookie(name) {

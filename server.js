@@ -20,13 +20,13 @@ app.use('/css', express.static(__dirname + '/public'))
 app.use("/public", express.static(__dirname + "/public"));
 console.log(process.env.FIREBASE_API_KEY)
 app.get('/:fid',(req,res)=>{
-    
-   
+
     res.sendFile(path.join(__dirname+'/views/startpage.html'));
   
     
 });
 
+    
 app.get('/:fid/employers',(req,res)=>{
     const dom = new JSDOM(path.join(__dirname+'/views/employers.html'));
     const element=dom.window.document.querySelector(".btn_next");

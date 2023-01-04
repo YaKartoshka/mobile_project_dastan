@@ -182,7 +182,7 @@ a {
 
 .wtd_title{
     color: gray;
-    padding: 5px 10px;
+    padding: 10px 10px;
 }
 .wtd{
     display: flex;
@@ -195,7 +195,7 @@ a {
     border-radius: 10px;
     
     background-color: #92a1d1;
-    height: 50px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -206,6 +206,7 @@ a {
 }
 .title{
     color: white;
+    padding-bottom: 10px;
 }
 .price{
     color: white;
