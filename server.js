@@ -22,15 +22,12 @@ console.log(process.env.FIREBASE_API_KEY)
 app.get('/:fid',(req,res)=>{
 
     res.sendFile(path.join(__dirname+'/views/startpage.html'));
-  
+    
     
 });
 
     
 app.get('/:fid/employers',(req,res)=>{
-    const dom = new JSDOM(path.join(__dirname+'/views/employers.html'));
-    const element=dom.window.document.querySelector(".btn_next");
-    
     res.sendFile(path.join(__dirname+'/views/employers.html'))  
 });
 
@@ -43,7 +40,6 @@ app.get('/:fid/services',(req,res)=>{
 });
 
 app.get('/:fid/startpage',(req,res)=>{
-   
 
     res.sendFile(path.join(__dirname+'/views/startpage.html'))  
 });
@@ -78,7 +74,7 @@ app.post('/:fid/confirmed',async(req,res)=>{
     var month=getMonth(full_time[1]);
     var date=`${full_time[0]}/${month}/${full_time[2]}`
     var data={
-        employer_name:employer_name,
+        employer_name:employer_name.trim(),
         service:service,
         date:date,
         time:full_time[4],

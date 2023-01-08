@@ -362,7 +362,6 @@ function CalendarControl() {
   let todayDate = document.querySelector(".calendar .calendar-today-date");
 
   $(".number-item").click(async function (){
-    console.log('suu')
     $(".calendar-today").removeClass('calendar-today')
     $(this).addClass('calendar-today');
     remove();
@@ -414,7 +413,10 @@ async function showTimeSquares(){
       $(this).addClass('timeSquarePicked')
     });
   })
-  
-  
+  if($('.time').children().length>23){
+    remove();
+    showTimeSquares();
+  }
 }
+  
 
