@@ -2,9 +2,9 @@ var current_url=window.location.href;
 var splittet_url=current_url.split('/');
 var mfid=splittet_url[3];
 
-if(document.cookie.indexOf('mfid=')==-1){
-    document.cookie = encodeURIComponent('mfid') + '=' + encodeURIComponent(mfid);
-}
+
+document.cookie = encodeURIComponent('mfid') + '=' + encodeURIComponent(mfid);
+
 
 
 
