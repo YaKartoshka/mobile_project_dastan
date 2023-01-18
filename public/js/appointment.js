@@ -34,40 +34,40 @@ function remove(){
 }
 
 const getMonth=(month)=>{
-  if(month=="Сентябрь"){
+  if(month=="сентябрь"){
       return '09'
   }
-  if(month=="Октябрь"){
+  if(month=="октябрь"){
       return '10'
   }
-  if(month=="Ноябрь"){
+  if(month=="ноябрь"){
       return '11'
   }
-  if(month=="Декабрь"){
+  if(month=="декабрь"){
       return '12'
   }
-  if(month=="Январь"){
+  if(month=="январь"){
       return '01'
   }
-  if(month=="Февраль"){
+  if(month=="февраль"){
       return '02'
   }
-  if(month=="Март"){
+  if(month=="март"){
       return '03'
   }
-  if(month=="Апрель"){
+  if(month=="фпрель"){
       return '04'
   }
-  if(month=="Май"){
+  if(month=="май"){
       return '05'
   }
-  if(month=="Июнь"){
+  if(month=="июнь"){
       return '06'
   }
-  if(month=="Июль"){
+  if(month=="июль"){
       return '07'
   }
-  if(month=="Август"){
+  if(month=="август"){
       return '08'
   }
   
