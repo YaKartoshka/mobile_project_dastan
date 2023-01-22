@@ -34,47 +34,45 @@ function remove(){
 }
 
 const getMonth=(month)=>{
-  if(month=="сентябрь"){
+  if(month=="Сентябрь"){
       return '09'
   }
-  if(month=="октябрь"){
+  if(month=="Октябрь"){
       return '10'
   }
-  if(month=="ноябрь"){
+  if(month=="Ноябрь"){
       return '11'
   }
-  if(month=="декабрь"){
+  if(month=="Декабрь"){
       return '12'
   }
-  if(month=="январь"){
+  if(month=="Январь"){
       return '01'
   }
-  if(month=="февраль"){
+  if(month=="Февраль"){
       return '02'
   }
-  if(month=="март"){
+  if(month=="Март"){
       return '03'
   }
-  if(month=="фпрель"){
+  if(month=="Апрель"){
       return '04'
   }
-  if(month=="май"){
+  if(month=="Май"){
       return '05'
   }
-  if(month=="июнь"){
+  if(month=="Июнь"){
       return '06'
   }
-  if(month=="июль"){
+  if(month=="Июль"){
       return '07'
   }
-  if(month=="август"){
+  if(month=="Август"){
       return '08'
   }
   
 }
   
-  
-
 
 
 $(".timeSquare").click(function () {
