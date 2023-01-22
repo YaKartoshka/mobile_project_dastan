@@ -18,7 +18,6 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use('/css', express.static(__dirname + '/public'))
 app.use("/public", express.static(__dirname + "/public"));
-console.log(process.env.FIREBASE_API_KEY)
 app.get('/:fid',(req,res)=>{
 
     res.sendFile(path.join(__dirname+'/views/startpage.html'));
@@ -136,6 +135,6 @@ const getMonth=(month)=>{
 }
 
 app.listen(port, ()=>{
-    console.log(`App listening at http://localhost:${port}/RfRUsgTbyhQLijxXMaMQ`);
+    console.log(`App listening at http://localhost:${port}`);
 });
 
